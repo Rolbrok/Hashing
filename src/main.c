@@ -25,15 +25,15 @@ char *crypt(char *str)
     }
 
     char *final = malloc(final_length+1);// * sizeof(char));    
-    for (i = 0; i < final_length+1; i++) {
+    /*for (i = 0; i < final_length+1; i++) {
         final[i] = ' ';
-    }    
+    }*/   
 
     srand(length * (l_char + f_char + middle_chars));
     
     int choice;
-    final_length = strlen(final);
-    for (i = 0; i < final_length; i++) {
+    //final_length = strlen(final);
+    for (i = 0; i < final_length+1; i++) {
         choice = randint(1,3);        
         do {
             switch (choice) {
