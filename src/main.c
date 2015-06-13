@@ -15,8 +15,8 @@ char *crypt(char *str)
     size_t length = strlen(str);
     size_t final_length = length * 2;
 
-    unsigned char f_char = str[0];
-    unsigned char l_char = str[length-1]+1;
+    unsigned char f_char = str[0]*final_length +1;
+    unsigned char l_char = str[length-1]*length+1;
     unsigned int middle_chars = 1;
     
     int i;
@@ -25,14 +25,10 @@ char *crypt(char *str)
     }
 
     char *final = malloc(final_length+1);// * sizeof(char));    
-    /*for (i = 0; i < final_length+1; i++) {
-        final[i] = ' ';
-    }*/   
 
     srand(length * (l_char + f_char + middle_chars));
     
     int choice;
-    //final_length = strlen(final);
     for (i = 0; i < final_length+1; i++) {
         choice = randint(1,3);        
         do {
