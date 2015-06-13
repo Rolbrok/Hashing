@@ -21,7 +21,7 @@ char *crypt(char *str)
     
     int i;
     for (i = 1; i < length-1; i++) {
-        middle_chars *= str[i]+i;
+        middle_chars *= str[i]*i+i;
     }
 
     char *final = malloc(final_length+1);// * sizeof(char));    
