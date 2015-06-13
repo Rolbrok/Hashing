@@ -1,2 +1,2 @@
 all:
-	clang src/main.c -o build/output -lm
+	gcc src/main.c -o build/output -lm
