@@ -21,17 +21,17 @@ char *crypt(char *str)
     
     // Defines the final length (which will be the length of len(str) * 2 + 1)
     size_t length = strlen(str);
-    size_t final_length = length * 2;
+    size_t final_length = length - 1;//length * 2;
 
     // Defines the first and the last chars to define 
-    unsigned char f_char = str[0]*final_length +1;
-    unsigned char l_char = str[length-1]*length+1;
+    size_t f_char = str[0]*final_length +1;
+    size_t l_char = str[length-1]*length+1;
     
     // Defines all the middle chars of str (multiplication of all the chars
     // times their position plus their position)
     // middle_chars *= ALL{str[i] * i + i}
     // i being the position of the char
-    unsigned int middle_chars = 1;
+    size_t middle_chars = 1;
     for (i = 1; i < length-1; i++) {
         middle_chars *= str[i]*i+i;
     }
